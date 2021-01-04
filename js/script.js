@@ -26,20 +26,22 @@ const showPage = (list, page) => {
    // loop over the length of the `list` parameter
    for (let i = firstStudentIndex; i <= lastStudentIndex; i++) {
       // creates template literal to insert all student data for each iteration
-      let iterationString = 
-      `
-      <li class="student-item cf">
-         <div class="student-details">
-            <img class="avatar" src=${list[i].picture.large} alt="Profile Picture">
-            <h3>${list[i].name.first} ${list[i].name.last}</h3>
-            <span class="email">${list[i].email}</span>
-         </div>
-      <div class="joined-details">
-        <span class="date">${list[i].registered.date}</span>
-      </div>
-      </li>
-    `;
-    studentList.innerHTML += iterationString; // adds each iteration to the variable student list
+      if(list[i]) {   
+         let iterationString = 
+            `
+            <li class="student-item cf">
+               <div class="student-details">
+                  <img class="avatar" src=${list[i].picture.large} alt="Profile Picture">
+                  <h3>${list[i].name.first} ${list[i].name.last}</h3>
+                  <span class="email">${list[i].email}</span>
+               </div>
+            <div class="joined-details">
+            <span class="date">${list[i].registered.date}</span>
+            </div>
+            </li>
+         `;
+         studentList.innerHTML += iterationString; // adds each iteration to the variable student list
+      }
    }
 }
 /*
