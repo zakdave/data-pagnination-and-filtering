@@ -26,7 +26,8 @@ const showPage = (list, page) => {
    // loop over the length of the `list` parameter
    for (let i = firstStudentIndex; i <= lastStudentIndex; i++) {
       // creates template literal to insert all student data for each iteration
-      if(list[i]) {   
+      if (list[i]) {   
+         // use template literal to insert each list item
          let iterationString = 
             `
             <li class="student-item cf">
@@ -83,6 +84,6 @@ const addPagination = (list) => {
 
    });
 }
-// Call functions and insert data.js as list parameter
+// Call functions and insert data.js as list parameter, start with page 1
 showPage(data, 1);
 addPagination(data);
